@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drilling Consumables - Cradle to Grave Tracking (Final)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .stage-box {
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .stage-box:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.02); }
+        }
+        .flow-line {
+            height: 3px;
+            background: linear-gradient(90deg, #10B981, #3B82F6);
+        }
+    </style>
+</head>
+<body class="bg-slate-100 min-h-screen p-6">
+    <div class="max-w-7xl mx-auto">
+        
+        <!-- Header -->
+        <div class="text-center mb-6">
+            <h1 class="text-3xl font-extrabold text-slate-800 mb-2">Drilling Consumables Lifecycle</h1>
+            <p class="text-slate-600 text-lg">Automated Cradle-to-Grave Tracking</p>
+            <div class="mt-3 inline-flex items-center gap-2 bg-emerald-100 text-emerald-700 px-4 py-2 rounded-full text-sm font-semibold">
+                <span class="w-2 h-2 bg-emerald-500 rounded-full pulse"></span>
+                Near-Zero Operator Input Required
+            </div>
+        </div>
+
+        <!-- Legend -->
+        <div class="flex justify-center gap-6 mb-6 text-sm flex-wrap">
+            <div class="flex items-center gap-2">
+                <div class="w-4 h-4 bg-emerald-500 rounded"></div>
+                <span>Fully Automated</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <div class="w-4 h-4 bg-amber-500 rounded"></div>
+                <span>Cons Tech Scan</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <div class="w-4 h-4 bg-blue-500 rounded"></div>
+                <span>System Managed</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <div class="w-4 h-4 bg-purple-500 rounded"></div>
+                <span>External/Supplier</span>
+            </div>
+        </div>
+
+        <!-- ==================== DRILL BITS ==================== -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 mb-6">
+            <div class="flex items-center justify-between mb-4 flex-wrap gap-3">
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center shadow-lg">
+                        <span class="text-white font-bold text-xl">⬇</span>
+                    </div>
+                    <div>
+                        <h2 class="text-xl font-bold text-slate-800">DRILL BITS</h2>
+                        <p class="text-sm text-slate-500">3 per rig maximum</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="bg-emerald-100 text-emerald-700 text-xs font-bold px-3 py-1.5 rounded-full">AUTO-DETECT</span>
+                    <span class="bg-amber-100 text-amber-700 text-xs font-bold px-3 py-1.5 rounded-full">SINGLE-TAP CONFIRM (when 2 spares)</span>
+                </div>
+            </div>
+
+            <!-- Main Flow -->
+            <div class="overflow-x-auto pb-4">
+                <div class="flex items-center gap-2 min-w-max">
+                    
+                    <!-- Supplier -->
+                    <div class="stage-box bg-slate-50 border-2 border-slate-300 rounded-xl p-4 w-36 text-center flex-shrink-0">
+                        <div class="text-[10px] font-bold text-slate-400 mb-1">SUPPLIER</div>
+                        <div class="text-sm font-semibold text-slate-700">Delivery</div>
+                        <div class="mt-2 text-[10px] text-slate-500">Serial # provided</div>
+                        <div class="mt-2 bg-amber-200 text-amber-800 text-[10px] px-2 py-1 rounded font-semibold">QR CREATED</div>
+                    </div>
+
+                    <div class="text-slate-400 text-xl flex-shrink-0">→</div>
+
+                    <!-- Warehouse -->
+                    <div class="stage-box bg-blue-50 border-2 border-blue-300 rounded-xl p-4 w-36 text-center flex-shrink-0">
+                        <div class="text-[10px] font-bold text-blue-500 mb-1">WAREHOUSE</div>
+                        <div class="text-sm font-semibold text-slate-700">Storage</div>
+                        <div class="mt-2 text-[10px] text-slate-500">Gate scanner</div>
+                        <div class="mt-2 bg-blue-200 text-blue-800 text-[10px] px-2 py-1 rounded font-semibold">AUTO LOG</div>
+                    </div>
+
+                    <div class="text-slate-400 text-xl flex-shrink-0">→</div>
+
+                    <!-- Cons Tech Issue -->
+                    <div class="stage-box bg-amber-50 border-2 border-amber-400 rounded-xl p-4 w-40 text-center flex-shrink-0">
+                        <div class="text-[10px] font-bold text-amber-600 mb-1">CONS TECH</div>
+                        <div class="text-sm font-semibold text-slate-700">Issue to Rig</div>
+                        <div class="mt-2 text-[10px] text-slate-500">QR → Rig ID link</div>
+                        <div class="mt-2 bg-amber-400 text-white text-[10px] px-2 py-1 rounded font-semibold">SCAN REQUIRED</div>
+                    </div>
+
+                    <div class="text-slate-400 text-xl flex-shrink-0">→</div>
+
+                    <!-- On Rig - 3 Bit Pool -->
+                    <div class="stage-box bg-emerald-50 border-2 border-emerald-400 rounded-xl p-4 w-48 text-center flex-shrink-0">
+                        <div class="text-[10px] font-bold text-emerald-600 mb-1">ON RIG - 3 BIT POOL</div>
+                        <div class="flex justify-center gap-1 my-2">
+                            <div class="w-10 h-10 bg-emerald-500 rounded-lg flex items-center justify-center text-white text-xs font-bold shadow">
+                                A<br/><span class="text-[8px]">IN USE</span>
+                            </div>
+                            <div class="w-10 h-10 bg-emerald-200 rounded-lg flex items-center justify-center text-emerald-700 text-xs font-bold">
+                                B<br/><span class="text-[8px]">SPARE</span>
+                            </div>
+                            <div class="w-10 h-10 bg-emerald-200 rounded-lg flex items-center justify-center text-emerald-700 text-xs font-bold">
+                                C<br/><span class="text-[8px]">SPARE</span>
+                            </div>
+                        </div>
+                        <div class="text-[10px] text-slate-600">System knows all serials</div>
+                    </div>
+
+                    <div class="text-slate-400 text-xl flex-shrink-0">→</div>
+
+                    <!-- Drilling -->
+                    <div class="stage-box bg-emerald-100 border-2 border-emerald-500 rounded-xl p-4 w-44 text-center flex-shrink-0 pulse">
+                        <div class="text-[10px] font-bold text-emerald-600 mb-1">DRILLING</div>
+                        <div class="text-sm font-semibold text-slate-700 mb-2">MineStar Tracks</div>
+                        <div class="text-[10px] text-slate-600 text-left space-y-0.5">
+                            <div>✓ Metres drilled</div>
+                            <div>✓ Pen rate (change detect)</div>
+                            <div>✓ Location/pattern</div>
+                            <div>✓ Operator ID</div>
+                        </div>
+                        <div class="mt-2 bg-emerald-500 text-white text-[10px] px-2 py-1 rounded font-semibold">FULLY AUTO</div>
+                    </div>
+
+                    <div class="text-slate-400 text-xl flex-shrink-0">→</div>
+
+                    <!-- Dead -->
+                    <div class="stage-box bg-slate-100 border-2 border-slate-400 rounded-xl p-4 w-40 text-center flex-shrink-0">
+                        <div class="text-[10px] font-bold text-slate-500 mb-1">DEAD</div>
+                        <div class="text-sm font-semibold text-slate-700">End of Life</div>
+                        <div class="mt-2 text-[10px] text-slate-500">Total life recorded</div>
+                        <div class="mt-2 bg-slate-300 text-slate-700 text-[10px] px-2 py-1 rounded font-semibold">LIFECYCLE DATA</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bit Change Logic Box -->
+            <div class="mt-4 bg-slate-800 rounded-xl p-5 text-white">
+                <h3 class="font-bold mb-3 text-emerald-400">🔄 AUTOMATIC BIT CHANGE DETECTION</h3>
+                <div class="grid md:grid-cols-3 gap-4 text-sm">
+                    <div class="bg-slate-700/50 rounded-lg p-3">
+                        <div class="text-emerald-400 font-semibold mb-2">1 Spare Left = AUTO</div>
+                        <p class="text-slate-300 text-xs">When only one spare remains, system auto-assigns on change detection. Zero input.</p>
+                    </div>
+                    <div class="bg-slate-700/50 rounded-lg p-3">
+                        <div class="text-amber-400 font-semibold mb-2">2 Spares = SINGLE TAP</div>
+                        <p class="text-slate-300 text-xs">"Bit B or C?" - one tap to confirm. If ignored, FIFO auto-selects oldest.</p>
+                    </div>
+                    <div class="bg-slate-700/50 rounded-lg p-3">
+                        <div class="text-blue-400 font-semibold mb-2">Supervisor Override</div>
+                        <p class="text-slate-300 text-xs">Any auto-assignment can be corrected later if needed.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== DTH HAMMERS ==================== -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 mb-6">
+            <div class="flex items-center justify-between mb-4 flex-wrap gap-3">
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center shadow-lg">
+                        <span class="text-white font-bold text-xl">⚡</span>
+                    </div>
+                    <div>
+                        <h2 class="text-xl font-bold text-slate-800">DTH HAMMERS</h2>
+                        <p class="text-sm text-slate-500">1 per rig - 100% automated</p>
+                    </div>
+                </div>
+                <div class="bg-emerald-500 text-white text-xs font-bold px-4 py-2 rounded-full">
+                    ✓ ZERO OPERATOR INPUT
+                </div>
+            </div>
+
+            <!-- Main Flow -->
+            <div class="overflow-x-auto pb-4">
+                <div class="flex items-center gap-2 min-w-max">
+                    
+                    <!-- Supplier -->
+                    <div class="stage-box bg-purple-50 border-2 border-purple-300 rounded-xl p-4 w-36 text-center flex-shrink-0">
+                        <div class="text-[10px] font-bold text-purple-500 mb-1">SUPPLIER</div>
+                        <div class="text-sm font-semibold text-slate-700">New/Rebuilt</div>
+                        <div class="mt-2 text-[10px] text-slate-500">QR + rebuild count</div>
+                        <div class="mt-2 bg-purple-200 text-purple-800 text-[10px] px-2 py-1 rounded font-semibold">QR CREATED</div>
+                    </div>
+
+                    <div class="text-slate-400 text-xl flex-shrink-0">→</div>
+
+                    <!-- Warehouse -->
+                    <div class="stage-box bg-blue-50 border-2 border-blue-300 rounded-xl p-4 w-36 text-center flex-shrink-0">
+                        <div class="text-[10px] font-bold text-blue-500 mb-1">WAREHOUSE</div>
+                        <div class="text-sm font-semibold text-slate-700">Storage</div>
+                        <div class="mt-2 bg-blue-200 text-blue-800 text-[10px] px-2 py-1 rounded font-semibold">AUTO LOG</div>
+                    </div>
+
+                    <div class="text-slate-400 text-xl flex-shrink-0">→</div>
+
+                    <!-- Cons Tech -->
+                    <div class="stage-box bg-amber-50 border-2 border-amber-400 rounded-xl p-4 w-40 text-center flex-shrink-0">
+                        <div class="text-[10px] font-bold text-amber-600 mb-1">CONS TECH</div>
+                        <div class="text-sm font-semibold text-slate-700">Issue to Rig</div>
+                        <div class="mt-2 bg-amber-400 text-white text-[10px] px-2 py-1 rounded font-semibold">SCAN REQUIRED</div>
+                    </div>
+
+                    <div class="text-slate-400 text-xl flex-shrink-0">→</div>
+
+                    <!-- On Rig - Single Hammer -->
+                    <div class="stage-box bg-emerald-50 border-2 border-emerald-400 rounded-xl p-4 w-40 text-center flex-shrink-0">
+                        <div class="text-[10px] font-bold text-emerald-600 mb-1">ON RIG</div>
+                        <div class="w-14 h-14 bg-emerald-500 rounded-xl flex items-center justify-center text-white font-bold mx-auto my-2 shadow-lg">
+                            <div class="text-center">
+                                <div class="text-lg">1</div>
+                                <div class="text-[8px]">HAMMER</div>
+                            </div>
+                        </div>
+                        <div class="text-[10px] text-slate-600">No ambiguity possible</div>
+                    </div>
+
+                    <div class="text-slate-400 text-xl flex-shrink-0">→</div>
+
+                    <!-- Drilling -->
+                    <div class="stage-box bg-emerald-100 border-2 border-emerald-500 rounded-xl p-4 w-44 text-center flex-shrink-0 pulse">
+                        <div class="text-[10px] font-bold text-emerald-600 mb-1">DRILLING</div>
+                        <div class="text-sm font-semibold text-slate-700 mb-2">Auto-Tracked</div>
+                        <div class="text-[10px] text-slate-600 text-left space-y-0.5">
+                            <div>✓ Metres drilled</div>
+                            <div>✓ Air pressure signature</div>
+                            <div>✓ Swap auto-detected</div>
+                        </div>
+                        <div class="mt-2 bg-emerald-500 text-white text-[10px] px-2 py-1 rounded font-semibold">FULLY AUTO</div>
+                    </div>
+
+                    <div class="text-slate-400 text-xl flex-shrink-0">→</div>
+
+                    <!-- Off Rig -->
+                    <div class="stage-box bg-amber-50 border-2 border-amber-400 rounded-xl p-4 w-36 text-center flex-shrink-0">
+                        <div class="text-[10px] font-bold text-amber-600 mb-1">OFF RIG</div>
+                        <div class="text-sm font-semibold text-slate-700">Cons Tech</div>
+                        <div class="mt-2 bg-amber-400 text-white text-[10px] px-2 py-1 rounded font-semibold">SCAN OUT</div>
+                    </div>
+
+                    <div class="text-slate-400 text-xl flex-shrink-0">→</div>
+
+                    <!-- Supplier Decision -->
+                    <div class="flex flex-col gap-2 flex-shrink-0">
+                        <div class="stage-box bg-purple-50 border-2 border-purple-400 rounded-xl p-3 w-36 text-center">
+                            <div class="text-[10px] font-bold text-purple-600">REBUILD</div>
+                            <div class="text-[10px] text-slate-500 mt-1">Supplier decides</div>
+                        </div>
+                        <div class="stage-box bg-slate-100 border-2 border-slate-400 rounded-xl p-3 w-36 text-center">
+                            <div class="text-[10px] font-bold text-slate-500">DEAD</div>
+                            <div class="text-[10px] text-slate-500 mt-1">Total life logged</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 1 Hammer Logic -->
+            <div class="mt-4 bg-emerald-600 rounded-xl p-4 text-white">
+                <div class="flex items-center gap-3">
+                    <div class="text-3xl">✓</div>
+                    <div>
+                        <div class="font-bold">1 Hammer = 100% Automated Tracking</div>
+                        <div class="text-sm text-emerald-100">System always knows exactly which hammer is on/off. When swap detected via air pressure change, old hammer auto-logged off, new hammer (scanned in by Cons Tech) auto-logged on. Supplier determines rebuild vs dead.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== SUBS & RODS ==================== -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 mb-6">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg">
+                    <span class="text-white font-bold text-xl">=</span>
+                </div>
+                <div>
+                    <h2 class="text-xl font-bold text-slate-800">SUBS & RODS</h2>
+                    <p class="text-sm text-slate-500">Cons Tech controlled changes</p>
+                </div>
+            </div>
+
+            <div class="overflow-x-auto pb-4">
+                <div class="flex items-center gap-2 min-w-max">
+                    <div class="stage-box bg-slate-50 border-2 border-slate-300 rounded-xl p-3 w-32 text-center flex-shrink-0">
+                        <div class="text-[10px] font-bold text-slate-400">SUPPLIER</div>
+                        <div class="text-xs font-semibold text-slate-700 mt-1">Delivery</div>
+                        <div class="mt-1 bg-amber-200 text-amber-800 text-[10px] px-2 py-0.5 rounded">QR</div>
+                    </div>
+                    <div class="text-slate-400 flex-shrink-0">→</div>
+                    <div class="stage-box bg-blue-50 border-2 border-blue-300 rounded-xl p-3 w-32 text-center flex-shrink-0">
+                        <div class="text-[10px] font-bold text-blue-500">WAREHOUSE</div>
+                        <div class="text-xs font-semibold text-slate-700 mt-1">Storage</div>
+                        <div class="mt-1 bg-blue-200 text-blue-800 text-[10px] px-2 py-0.5 rounded">AUTO</div>
+                    </div>
+                    <div class="text-slate-400 flex-shrink-0">→</div>
+                    <div class="stage-box bg-amber-50 border-2 border-amber-400 rounded-xl p-3 w-36 text-center flex-shrink-0">
+                        <div class="text-[10px] font-bold text-amber-600">CONS TECH</div>
+                        <div class="text-xs font-semibold text-slate-700 mt-1">Issue to Rig</div>
+                        <div class="mt-1 bg-amber-400 text-white text-[10px] px-2 py-0.5 rounded">SCAN</div>
+                    </div>
+                    <div class="text-slate-400 flex-shrink-0">→</div>
+                    <div class="stage-box bg-emerald-50 border-2 border-emerald-400 rounded-xl p-3 w-40 text-center flex-shrink-0">
+                        <div class="text-[10px] font-bold text-emerald-600">DRILLING</div>
+                        <div class="text-xs font-semibold text-slate-700 mt-1">Usage Tracked</div>
+                        <div class="mt-1 bg-emerald-500 text-white text-[10px] px-2 py-0.5 rounded">AUTO</div>
+                    </div>
+                    <div class="text-slate-400 flex-shrink-0">→</div>
+                    <div class="stage-box bg-slate-100 border-2 border-slate-400 rounded-xl p-3 w-32 text-center flex-shrink-0">
+                        <div class="text-[10px] font-bold text-slate-500">DEAD</div>
+                        <div class="text-xs font-semibold text-slate-700 mt-1">Life logged</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== SHOCK SUBS ==================== -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 mb-6">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-12 h-12 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-xl flex items-center justify-center shadow-lg">
+                    <span class="text-white font-bold text-xl">◈</span>
+                </div>
+                <div>
+                    <h2 class="text-xl font-bold text-slate-800">SHOCK SUBS</h2>
+                    <p class="text-sm text-slate-500">Supplier managed exchange program</p>
+                </div>
+            </div>
+
+            <div class="overflow-x-auto pb-4">
+                <div class="flex items-center gap-2 min-w-max">
+                    <div class="stage-box bg-purple-50 border-2 border-purple-300 rounded-xl p-3 w-36 text-center flex-shrink-0">
+                        <div class="text-[10px] font-bold text-purple-500">PLS WAREHOUSE</div>
+                        <div class="text-xs font-semibold text-slate-700 mt-1">Supplier Stock</div>
+                        <div class="mt-1 bg-purple-200 text-purple-800 text-[10px] px-2 py-0.5 rounded">CONSIGNMENT</div>
+                    </div>
+                    <div class="text-slate-400 flex-shrink-0">→</div>
+                    <div class="stage-box bg-amber-50 border-2 border-amber-400 rounded-xl p-3 w-36 text-center flex-shrink-0">
+                        <div class="text-[10px] font-bold text-amber-600">CONS TECH</div>
+                        <div class="text-xs font-semibold text-slate-700 mt-1">Issue to Rig</div>
+                        <div class="mt-1 bg-amber-400 text-white text-[10px] px-2 py-0.5 rounded">SCAN</div>
+                    </div>
+                    <div class="text-slate-400 flex-shrink-0">→</div>
+                    <div class="stage-box bg-emerald-50 border-2 border-emerald-400 rounded-xl p-3 w-36 text-center flex-shrink-0">
+                        <div class="text-[10px] font-bold text-emerald-600">ON RIG</div>
+                        <div class="text-xs font-semibold text-slate-700 mt-1">In Service</div>
+                        <div class="mt-1 bg-emerald-500 text-white text-[10px] px-2 py-0.5 rounded">AUTO</div>
+                    </div>
+                    <div class="text-slate-400 flex-shrink-0">→</div>
+                    <div class="stage-box bg-purple-50 border-2 border-purple-400 rounded-xl p-3 w-40 text-center flex-shrink-0">
+                        <div class="text-[10px] font-bold text-purple-600">SHIP FOR REBUILD</div>
+                        <div class="text-xs font-semibold text-slate-700 mt-1">Back to Supplier</div>
+                        <div class="mt-1 bg-purple-400 text-white text-[10px] px-2 py-0.5 rounded">MANAGED</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== TRANSFER BETWEEN RIGS ==================== -->
+        <div class="bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl shadow-lg p-6 mb-6 text-white">
+            <h2 class="text-lg font-bold mb-4 flex items-center gap-2">
+                <span>🔄</span> TRANSFER BETWEEN RIGS
+            </h2>
+            <div class="flex items-center gap-4 flex-wrap">
+                <div class="bg-white/20 rounded-xl p-4 flex-1 min-w-[200px]">
+                    <div class="font-semibold mb-2">From Rig A</div>
+                    <div class="text-sm text-blue-100">Cons Tech scans item OUT of Rig A</div>
+                    <div class="mt-2 bg-amber-400 text-amber-900 text-xs px-3 py-1 rounded inline-block font-semibold">SCAN OUT</div>
+                </div>
+                <div class="text-3xl">→</div>
+                <div class="bg-white/20 rounded-xl p-4 flex-1 min-w-[200px]">
+                    <div class="font-semibold mb-2">To Rig B</div>
+                    <div class="text-sm text-blue-100">Cons Tech scans item IN to Rig B</div>
+                    <div class="mt-2 bg-amber-400 text-amber-900 text-xs px-3 py-1 rounded inline-block font-semibold">SCAN IN</div>
+                </div>
+                <div class="bg-white/10 rounded-xl p-4 flex-1 min-w-[200px]">
+                    <div class="font-semibold mb-2 text-emerald-300">✓ Full History Preserved</div>
+                    <div class="text-sm text-blue-100">Total metres/hours follow the consumable across rigs</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== DATA OUTPUTS ==================== -->
+        <div class="bg-gradient-to-r from-slate-800 to-slate-700 rounded-2xl shadow-lg p-6 mb-6 text-white">
+            <h2 class="text-lg font-bold mb-4">📊 LIFECYCLE DATA CAPTURED</h2>
+            
+            <div class="grid md:grid-cols-4 gap-4 text-sm">
+                <div class="bg-white/10 rounded-xl p-4">
+                    <h3 class="font-semibold text-yellow-300 mb-3 flex items-center gap-2">
+                        <span class="w-6 h-6 bg-yellow-400/30 rounded flex items-center justify-center text-xs">🚜</span>
+                        By Drill
+                    </h3>
+                    <ul class="space-y-1.5 text-slate-300 text-xs">
+                        <li>• Total metres drilled</li>
+                        <li>• Consumables consumed</li>
+                        <li>• Cost per metre</li>
+                        <li>• Utilisation %</li>
+                    </ul>
+                </div>
+                <div class="bg-white/10 rounded-xl p-4">
+                    <h3 class="font-semibold text-green-300 mb-3 flex items-center gap-2">
+                        <span class="w-6 h-6 bg-green-400/30 rounded flex items-center justify-center text-xs">👷</span>
+                        By Operator
+                    </h3>
+                    <ul class="space-y-1.5 text-slate-300 text-xs">
+                        <li>• Bit/hammer life achieved</li>
+                        <li>• Pen rate performance</li>
+                        <li>• Usage patterns</li>
+                        <li>• Training opportunities</li>
+                    </ul>
+                </div>
+                <div class="bg-white/10 rounded-xl p-4">
+                    <h3 class="font-semibold text-blue-300 mb-3 flex items-center gap-2">
+                        <span class="w-6 h-6 bg-blue-400/30 rounded flex items-center justify-center text-xs">📍</span>
+                        By Location
+                    </h3>
+                    <ul class="space-y-1.5 text-slate-300 text-xs">
+                        <li>• Ground hardness impact</li>
+                        <li>• Optimal consumable type</li>
+                        <li>• Pattern performance</li>
+                        <li>• Geology correlation</li>
+                    </ul>
+                </div>
+                <div class="bg-white/10 rounded-xl p-4">
+                    <h3 class="font-semibold text-pink-300 mb-3 flex items-center gap-2">
+                        <span class="w-6 h-6 bg-pink-400/30 rounded flex items-center justify-center text-xs">📅</span>
+                        Scheduling
+                    </h3>
+                    <ul class="space-y-1.5 text-slate-300 text-xs">
+                        <li>• Predicted replacements</li>
+                        <li>• Optimal stock levels</li>
+                        <li>• Supplier order timing</li>
+                        <li>• Rebuild scheduling</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Dead Item Tracking Highlight -->
+            <div class="mt-4 bg-white/10 rounded-xl p-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-slate-600 rounded-lg flex items-center justify-center text-xl">💀</div>
+                    <div>
+                        <div class="font-semibold text-slate-200">DEAD ITEM TRACKING - LIFECYCLE ANALYTICS</div>
+                        <div class="text-sm text-slate-400">When items reach end-of-life, full history is captured: total metres, hours, operators, rigs, locations. This data feeds scheduling algorithms and identifies optimal consumable types for specific conditions.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== SUMMARY ==================== -->
+        <div class="bg-emerald-50 border-2 border-emerald-300 rounded-2xl p-6">
+            <h2 class="text-lg font-bold text-emerald-800 mb-4">✅ OPERATOR INPUT SUMMARY</h2>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="font-semibold text-emerald-700 mb-3">AUTOMATED (Zero Input)</h3>
+                    <div class="space-y-2">
+                        <div class="flex items-center gap-2 bg-white rounded-lg p-3">
+                            <span class="w-8 h-8 bg-emerald-500 rounded-lg flex items-center justify-center text-white font-bold text-sm">✓</span>
+                            <div>
+                                <div class="font-medium text-slate-800">DTH Hammer tracking</div>
+                                <div class="text-xs text-slate-500">1 per rig = no ambiguity</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2 bg-white rounded-lg p-3">
+                            <span class="w-8 h-8 bg-emerald-500 rounded-lg flex items-center justify-center text-white font-bold text-sm">✓</span>
+                            <div>
+                                <div class="font-medium text-slate-800">All drilling telemetry</div>
+                                <div class="text-xs text-slate-500">Metres, pen rate, location, operator</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2 bg-white rounded-lg p-3">
+                            <span class="w-8 h-8 bg-emerald-500 rounded-lg flex items-center justify-center text-white font-bold text-sm">✓</span>
+                            <div>
+                                <div class="font-medium text-slate-800">Bit change detection</div>
+                                <div class="text-xs text-slate-500">Pen rate signature identifies swap</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2 bg-white rounded-lg p-3">
+                            <span class="w-8 h-8 bg-emerald-500 rounded-lg flex items-center justify-center text-white font-bold text-sm">✓</span>
+                            <div>
+                                <div class="font-medium text-slate-800">Bit ID (when 1 spare)</div>
+                                <div class="text-xs text-slate-500">Auto-assigned from pool</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="font-semibold text-amber-700 mb-3">CONS TECH SCANS ONLY</h3>
+                    <div class="space-y-2">
+                        <div class="flex items-center gap-2 bg-white rounded-lg p-3">
+                            <span class="w-8 h-8 bg-amber-500 rounded-lg flex items-center justify-center text-white font-bold text-sm">📱</span>
+                            <div>
+                                <div class="font-medium text-slate-800">Issue to rig</div>
+                                <div class="text-xs text-slate-500">QR scan links item to rig ID</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2 bg-white rounded-lg p-3">
+                            <span class="w-8 h-8 bg-amber-500 rounded-lg flex items-center justify-center text-white font-bold text-sm">📱</span>
+                            <div>
+                                <div class="font-medium text-slate-800">Remove from rig</div>
+                                <div class="text-xs text-slate-500">Scan out for rebuild/dead</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2 bg-white rounded-lg p-3">
+                            <span class="w-8 h-8 bg-amber-500 rounded-lg flex items-center justify-center text-white font-bold text-sm">📱</span>
+                            <div>
+                                <div class="font-medium text-slate-800">Rig-to-rig transfer</div>
+                                <div class="text-xs text-slate-500">Scan out + scan in</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2 bg-white rounded-lg p-3">
+                            <span class="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center text-white font-bold text-sm">👆</span>
+                            <div>
+                                <div class="font-medium text-slate-800">Bit ID (when 2 spares)</div>
+                                <div class="text-xs text-slate-500">Single tap "B or C?" confirm</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="mt-6 text-center text-sm text-slate-500">
+            <p class="font-medium">Drilling Consumables Lifecycle - Final Process Map</p>
+            <p>Constraints: 3 Bits / 1 Hammer per Rig | Transfers via Cons Tech | Supplier determines rebuild</p>
+        </div>
+    </div>
+</body>
+</html>
